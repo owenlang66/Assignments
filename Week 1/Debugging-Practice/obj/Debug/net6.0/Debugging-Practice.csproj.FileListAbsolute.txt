@@ -1,0 +1,15 @@
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.csproj.AssemblyReference.cache
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.AssemblyInfoInputs.cache
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.AssemblyInfo.cs
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.csproj.CoreCompileInputs.cache
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\bin\Debug\net6.0\Debugging-Practice.exe
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\bin\Debug\net6.0\Debugging-Practice.deps.json
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\bin\Debug\net6.0\Debugging-Practice.runtimeconfig.json
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\bin\Debug\net6.0\Debugging-Practice.dll
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\bin\Debug\net6.0\Debugging-Practice.pdb
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.dll
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\refint\Debugging-Practice.dll
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.pdb
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\Debugging-Practice.genruntimeconfig.cache
+C:\Users\Owen Lang\Desktop\C#\Assignments\Week 1\Debugging-Practice\obj\Debug\net6.0\ref\Debugging-Practice.dll
