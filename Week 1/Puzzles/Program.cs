@@ -2,12 +2,12 @@
 static string CoinFlip()
 {
     Random rand = new Random();
-    if(rand.NextDouble() > 0.5)
+    if (rand.NextDouble() > 0.5)
     {
         return "Heads";
     }
     return "Tails";
-    
+
 }
 Console.WriteLine(CoinFlip());
 
@@ -15,7 +15,7 @@ Console.WriteLine(CoinFlip());
 static int DiceRoll()
 {
     Random rand = new Random();
-    int roll = rand.Next(1,7);
+    int roll = rand.Next(1, 7);
     return roll;
 }
 Console.WriteLine(DiceRoll());
@@ -37,5 +37,15 @@ StatRoll().ForEach(Console.WriteLine);
 // 4. Roll Until
 static string RollUntil(int Result)
 {
-    
+    int count = 0;
+    while (true)
+    {
+        int roll = DiceRoll();
+        count++;
+        if (roll == Result)
+        {
+            return ($"Rolled a {Result} after {count} tries!");
+        }
+    }
 }
+Console.WriteLine(RollUntil(3));
