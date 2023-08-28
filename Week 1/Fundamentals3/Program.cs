@@ -2,8 +2,6 @@
 
 // Given a List of strings, iterate through the List and print out all the values. Bonus: How many different ways can you find to print out the contents of a List? (There are at least 3! Check Google!)
 
-using System.Globalization;
-using System.Reflection.Metadata.Ecma335;
 
 static void PrintList(List<string> MyList)
 {
