@@ -35,4 +35,3 @@ public class Vehicle
         Console.WriteLine($"This vehicle has gone {Miles} miles! That's nutso!");
     }
 }
-
