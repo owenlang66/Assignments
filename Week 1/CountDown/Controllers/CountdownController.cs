@@ -5,7 +5,7 @@ namespace CountDown.Controllers;
 public class CountdownController : Controller   // Remember inheritance?    
 {      
   
-    
+
     [HttpGet("")]
     public ViewResult Index()
     {
@@ -13,5 +13,4 @@ public class CountdownController : Controller   // Remember inheritance?
         ViewBag.EndDate = endDate;
         return View();
     }
-
 }
