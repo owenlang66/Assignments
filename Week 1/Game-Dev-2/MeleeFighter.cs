@@ -13,6 +13,4 @@ public class MeleeFighter : Enemy
     {
         Target.Health -= base.RandomAttack().DamageAmt+10;
     } 
-
-
 }

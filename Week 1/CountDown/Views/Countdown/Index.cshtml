@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .box {
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 250px;
+        margin: 30px;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN TO NOTHING</title>
+</head>
+
+<body>
+    @{
+        DateTime CurrentDateTime = DateTime.Now;
+        TimeSpan TimeLeft = ViewBag.EndDate - CurrentDateTime;
+        int DaysLeft = TimeLeft.Days;
+        int HoursLeft = TimeLeft.Hours;
+        int MinutesLeft = TimeLeft.Minutes;
+        int SecondsLeft = TimeLeft.Seconds;
+    }
+    <h1>COUNTDOWN TO NOTHING</h1>
+    <div class="container">
+        <div class="box">
+            <h2>Current Time</h2>
+            <p>@DateTime.Now.ToString("dddd, dd MMMM yyyy")</p>
+            <p>@DateTime.Now.ToString("HH:mm:ss")</p>
+        </div>
+        <div class="box">
+            <h2>End Time</h2>
+            <p>@ViewBag.EndDate.ToString("dddd, dd MMMM yyyy")</p>
+            <p>@ViewBag.EndDate.ToString("HH:mm:ss")</p>
+        </div>
+    </div>
+    <div>
+        <h2>Time Remaining!</h2>
+        <div>
+            <p>@DaysLeft Day(s), @HoursLeft Hour(s), @MinutesLeft Minute(s), @SecondsLeft Second(s) Remaining</p>
+        </div>
+    </div>
+</body>
+</html>
