@@ -5,7 +5,7 @@ namespace CountDown.Controllers;
 public class CountdownController : Controller   // Remember inheritance?    
 {      
   
-
+    
     [HttpGet("")]
     public ViewResult Index()
     {
