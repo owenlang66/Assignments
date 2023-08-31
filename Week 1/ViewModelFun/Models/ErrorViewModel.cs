@@ -6,3 +6,5 @@ public class ErrorViewModel
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 }
+
+// ? if you want a value to be null

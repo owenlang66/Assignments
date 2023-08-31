@@ -1,0 +1,16 @@
+@* this is importing the layout rendering page *@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@* this denotes we are working with a ViewModel, which is expecting the model name*@
+@model NumberModel
+<div class="text-center">
+    <h1>Here's some nums</h1>
+    @{
+        @* we are referencing the model data here, hence the Model.whatever *@
+        foreach (int number in Model.Numbers)
+        {
+            <p>@number</p>
+        }
+    }
+</div>

@@ -18374,6 +18374,11 @@
   "RootNamespace": "ViewModelFun",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 1\\ViewModelFun\\Views\\Home\\Users.cshtml",
+      "TargetPath": "Views\\Home\\Users.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 1\\ViewModelFun\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -18396,6 +18401,16 @@
     {
       "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 1\\ViewModelFun\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 1\\ViewModelFun\\Views\\Home\\User.cshtml",
+      "TargetPath": "Views\\Home\\User.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 1\\ViewModelFun\\Views\\Home\\Numbers.cshtml",
+      "TargetPath": "Views\\Home\\Numbers.cshtml",
       "FileKind": "mvc"
     },
     {

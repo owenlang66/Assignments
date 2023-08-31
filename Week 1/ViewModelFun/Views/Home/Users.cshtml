@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@* this denotes we are working with a ViewModel, and we are expecting a string from this *@
+@model List<UserModel>
+<div class="text-center">
+    <h1>Here's some Hot Names for ya</h1>
+    @{
+        @* we are referencing the model data here, hence the Model.whatever *@
+        foreach (UserModel name in Model)
+        {
+            <p>@name.FirstName @name.LastName</p>
+        }
+    }
+</div>

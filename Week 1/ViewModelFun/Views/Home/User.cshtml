@@ -1,8 +1,9 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
 @* this denotes we are working with a ViewModel, and we are expecting a string from this *@
-@model string
+@model UserModel
 <div class="text-center">
-    <p>@Model</p>
+    <h1>That's a USER right THERE</h1>
+    <p>@Model.FirstName @Model.LastName</p>
 </div>
