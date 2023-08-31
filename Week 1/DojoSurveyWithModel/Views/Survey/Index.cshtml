@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .container {
+        @* border: 2px solid black; *@
+        margin: 10px;
+        padding: 10px;
+        width: 250px;
+    }
+</style>
+
+<body>
+    <h1>Dojo Survey!</h1>
+    <div>
+        @* this action corresponds back to the controller, in the HttpPost *@
+        <form class="container" action="submit" method="post">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" />
+            </div>
+            <div>
+                <label for="location">Location: </label>
+                @* IDs are necessary to pass the information *@
+                <select name="location" id="location">
+                    <option value="San Jose">San Jose</option>
+                    <option value="Denver">Denver</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+            </div>
+            <div>
+                <label for="language">Favorite Language: </label>
+                <select name="language" id="language">
+                    <option value="C#">C#</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                </select>
+            </div>
+            <div>
+                <label for="comments">Comments(optional): </label>
+                <input name="comments" type="text"/>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
