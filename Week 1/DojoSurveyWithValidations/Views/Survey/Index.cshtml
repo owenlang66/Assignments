@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@* importing in model *@
+@model SurveyModel
+<style>
+    .container {
+        @* border: 2px solid black; *@
+        margin: 10px;
+        padding: 10px;
+        width: 250px;
+    }
+</style>
+
+<body>
+    <h1>Dojo Survey!</h1>
+    <div>
+        @* this action corresponds back to the controller, in the HttpPost *@
+        <form class="container" action="submit" method="post">
+            <div>
+                <label for="name">Name: </label>
+                <input asp-for="Name"/>
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label for="location">Location: </label>
+                @* IDs are necessary to pass the information *@
+                <select asp-for="Location">
+                    <option value="San Jose">San Jose</option>
+                    <option value="Denver">Denver</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+                <span asp-validation-for="Location"></span>
+            </div>
+            <div>
+                <label for="language">Favorite Language: </label>
+                <select asp-for="Language">
+                    <option value="C#">C#</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                </select>
+                <span asp-validation-for="Language"></span>
+            </div>
+            <div>
+                <label for="comments">Comments(optional): </label>
+                <input asp-for="Comments"/>
+                <span asp-validation-for="Comments"></span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
