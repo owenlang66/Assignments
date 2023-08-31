@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model DateModel
+
+<div>
+    <h1>Here's your Results!</h1>
+    @* Model is used to pass data from controllers to views *@
+    <p>Name: @Model.Name</p>
+    <p>Date: @Model.Date</p>
+    <a href="/">Take me back!</a>
+</div>
