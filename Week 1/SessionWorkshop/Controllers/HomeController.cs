@@ -6,29 +6,68 @@ namespace SessionWorkshop.Controllers;
 
 public class HomeController : Controller
 {
+    // this is the landing page
     [HttpGet("")]
     public ViewResult Index()
     {
         return View();
     }
 
-    [HttpPost("submission")]
-    public IActionResult Submission(UserModel form)
+    [HttpPost("Login")]
+    public IActionResult Login(string Name)
     {
-        if(ModelState.IsValid)
+        HttpContext.Session.SetString("User", Name);
+        HttpContext.Session.SetInt32("IntVal", 22);
+        if (ModelState.IsValid)
         {
-            return View("Success", form);
+            return RedirectToAction("Success");
         }
         else
         {
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 
-    [HttpGet("logout")]
-    public ViewResult Logout()
+    [HttpPost("Change")]
+    public IActionResult Change(string edit)
+    {
+        int? num = HttpContext.Session.GetInt32("IntVal");
+        if (edit == "x2")
+        {
+            int editNum = (int)(num * 2);
+            HttpContext.Session.SetInt32("IntVal", editNum);
+        }
+        else if (edit == "-1")
+        {
+            int editNum = (int)(num - 1);
+            HttpContext.Session.SetInt32("IntVal", editNum);
+        }
+        else if (edit == "+1")
+        {
+            int editNum = (int)(num + 1);
+            HttpContext.Session.SetInt32("IntVal", editNum);
+        }
+        else
+        {
+            Random rand = new Random();
+            int randNum = rand.Next(1, 11);
+            int editNum = (int)(num + randNum);
+            HttpContext.Session.SetInt32("IntVal", editNum);
+        }
+        return RedirectToAction("Success");
+    }
+
+    [HttpPost("Logout")]
+    public IActionResult Logout()
     {
         HttpContext.Session.Clear();
-        return View("Index");
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet("Success")]
+    public IActionResult Success()
+    {
+        string? User = HttpContext.Session.GetString("User");
+        return View();
     }
 }

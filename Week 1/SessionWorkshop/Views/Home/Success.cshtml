@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@model UserModel
+@* @model UserModel *@
 <style>
     .body{
         text-align: center;
@@ -11,27 +11,41 @@
     }
 
     .box {
-        width: 100px;
-        height: 50px;
+        width: 150px;
+        height: 100px;
         border: 2px solid black;
         margin: 5px;
         text-align: center;
     }
 </style>
 <div>
-    <h1>Welcome @Model.Name!</h1>
-    <button asp-action="logout">Logout</button>
+    <h1>Welcome @Context.Session.GetString("User")!</h1>
+    <form action="Logout" method="post">
+        <button action="logout" method="post">Logout</button>
+    </form>
 </div>
 <div class="body">
-    <div>STARTING NUMBER</div>
+    <p>@Context.Session.GetInt32("IntVal")</p>
     <div class="container">
         <div>
-            <div class="box" style="background-color: rgb(205, 190, 98)">+ 1</div>
-            <div class="box" style="background-color: rgb(255, 128, 128)">X 2</div>
+            <form class="box" style="background-color: rgb(205, 190, 98)" action="/Change" method="post">
+                <input type="hidden" name="edit" value="+1"/>
+                <input type="submit" value="+1" />
+            </form>
+            <form class="box" style="background-color: rgb(255, 128, 128)" action="/Change" method="post">
+                <input type="hidden" name="edit" value="x2" />
+                <input type="submit" value="x2" />
+            </form>
         </div>
         <div>
-            <div class="box" style="background-color: rgb(140, 140, 255)">- 1</div>
-            <div class="box" style="background-color: rgb(92, 220, 92)">+ Random</div>
+            <form class="box" style="background-color: rgb(140, 140, 255)" action="/Change" method="post">
+                <input type="hidden" name="edit" value="-1" />
+                <input type="submit" value="-1" />
+            </form>
+            <form class="box" style="background-color: rgb(92, 220, 92)" action="/Change" method="post">
+                <input type="hidden" name="edit" value="random" />
+                <input type="submit" value="Add Random" />
+            </form>
         </div>
     </div>
 </div>
