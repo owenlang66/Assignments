@@ -16,4 +16,3 @@
 
 </Project>
 
-new VideoGame { Title = "Cuphead", Studio ="Studio MDHR", Rating = "E", Price = 19.99, Platform ="Various"}
