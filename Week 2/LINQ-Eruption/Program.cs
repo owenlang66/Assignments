@@ -63,7 +63,8 @@ int top = eruptions.Max(c => c.ElevationInMeters);
 Console.WriteLine(top);
 
 
-Eruption topName = eruptions.FirstOrDefault(c => c.ElevationInMeters == top);
+Eruption topVol = eruptions.FirstOrDefault(c => c.ElevationInMeters == top);
+string topName = topVol.Volcano;
 Console.WriteLine(topName);
 
 
