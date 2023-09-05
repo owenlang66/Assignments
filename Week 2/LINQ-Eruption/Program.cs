@@ -45,6 +45,9 @@ else
     Console.WriteLine("No Greenland Eruption found");
 }
 
+Eruption newZ = eruptions.FirstOrDefault(c => c.Location == "New Zealand" && c.Year > 1900);
+Console.WriteLine(newZ);
+
 
 IEnumerable<Eruption> twoK = eruptions.Where(c => c.ElevationInMeters > 2000);
 PrintEach(twoK);
@@ -84,8 +87,11 @@ IEnumerable<Eruption> pre = eruptions.Where(c => c.Year < 1000);
 PrintEach(pre);
 
 
-IEnumerable<Eruption> prepre = eruptions.Select(c => c.Volcano).Where(c => c.Year < 1000);
-PrintEach(prepre);
+IEnumerable<string> prepre = eruptions.Where(c => c.Year < 1000).Select(c => c.Volcano);
+foreach(string name in prepre)
+{
+    Console.WriteLine(name);
+}
 
 
 
