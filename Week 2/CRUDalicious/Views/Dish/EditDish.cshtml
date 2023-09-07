@@ -1,0 +1,34 @@
+@model Dish
+@{
+    ViewData["Title"] = "Edit Dish";
+}
+
+<h1>Edit your @Model.Name</h1>
+<form asp-action="UpdateDish" asp-controller="Dish" method="POST" asp-route-dishId="@Model.DishId">
+    <div className="m-3">
+        <label asp-for="Chef"></label>
+        <input asp-for="Chef" value="@Model.Chef"/>
+        <span asp-validation-for="Chef"></span>
+    </div>
+    <div className="m-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div className="m-3">
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" value="@Model.Calories"/>
+        <span asp-validation-for="Calories"></span>
+    </div>
+    <div className="m-3">
+        <label asp-for="Tastiness"></label>
+        <input asp-for="Tastiness" value="@Model.Tastiness"/>
+        <span asp-validation-for="Tastiness"></span>
+    </div>
+    <div className="m-3">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" value="@Model.Description"/>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <button>Submit</button>
+</form>

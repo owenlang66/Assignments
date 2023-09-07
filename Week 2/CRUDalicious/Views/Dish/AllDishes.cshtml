@@ -1,0 +1,16 @@
+@model List<Dish>
+@{
+    ViewData["Title"] = "New Dish";
+}
+
+@foreach (Dish d in Model)
+{
+    <div>
+        <h3><a asp-route-dishId="@d.DishId" asp-action="ViewDish" asp-controller="Dish">@d.Name</a> by @d.Chef</h3>
+    </div>
+    <div>
+        <form asp-action="DeleteDish" asp-controller="Dish" method="POST" asp-route-dishId="@d.DishId">
+            <button class="btn-danger">DELETE</button>
+        </form>
+    </div>
+}
