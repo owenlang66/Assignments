@@ -13,16 +13,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    // [HttpGet("")]
-    // public IActionResult Index()
-    // {
-    //     List<Dish> AllDishes = _context.Dishes.ToList();
-    //     return View(AllDishes);
-    // }
 
-    public ViewResult Index()
+    public IActionResult Index()
     {
-        return View();
+        return RedirectToAction("AllDishes", "Dish");
     }
 
 

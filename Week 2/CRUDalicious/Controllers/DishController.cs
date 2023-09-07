@@ -17,6 +17,7 @@ public class DishController : Controller
         _context = context;
     }
 
+
 // ********* CREATE NEW ***************
     [HttpGet("dishes/new")]
     public ViewResult NewDish()
@@ -32,7 +33,7 @@ public class DishController : Controller
         {
             _context.Add(newDish);
             _context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("AllDishes");
         } else {
             return View("NewDish");
         }
