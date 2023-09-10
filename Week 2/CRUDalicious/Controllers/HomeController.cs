@@ -13,7 +13,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-
+// NEED CONTEXT HERE IF WANT TO TALK TO THE DB 
     public IActionResult Index()
     {
         return RedirectToAction("AllDishes", "Dish");

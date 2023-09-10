@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .container {
+        display: flex;
+    }
+</style>
+
+<h1>Welcome!</h1>
+<div className="container">
+    <div>
+        <h2>Register</h2>
+        @await Html.PartialAsync("_RegPartial")
+    </div>
+    <div>
+        <h2>Register</h2>
+        @await Html.PartialAsync("_LoginPartial")
+    </div>
+</div>

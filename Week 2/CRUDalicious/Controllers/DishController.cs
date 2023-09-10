@@ -35,6 +35,7 @@ public class DishController : Controller
             _context.SaveChanges();
             return RedirectToAction("AllDishes");
         } else {
+            // if invalid redirect to the form again
             return View("NewDish");
         }
     }
@@ -44,6 +45,7 @@ public class DishController : Controller
     [HttpGet("dishes")]
     public ViewResult AllDishes()
     {
+        // allows us to access the database
         List<Dish> AllDishes = _context.Dishes.OrderByDescending(d => d.CreatedAt).ToList();
         return View(AllDishes);
     }
@@ -53,6 +55,7 @@ public class DishController : Controller
     [HttpGet("dishes/{dishId}")]
     public IActionResult ViewDish(int dishId)
     {
+        // LINQ query that grabs that one dishId 
         Dish? OneDish = _context.Dishes.FirstOrDefault(d => d.DishId == dishId);
         if (OneDish == null){
             return RedirectToAction("AllDishes");
@@ -65,6 +68,7 @@ public class DishController : Controller
     [HttpPost("dishes/{dishId}/delete")]
     public IActionResult DeleteDish(int dishId)
     {
+        // single or default returns the ONLY element that satisfies the condition, whereas firstordefault returns the FIRST element that satifies it 
         Dish? ToBeDeleted = _context.Dishes.SingleOrDefault(d => d.DishId == dishId);
         if (ToBeDeleted != null){
             _context.Remove(ToBeDeleted);
@@ -78,6 +82,7 @@ public class DishController : Controller
     [HttpGet("dishes/{dishId}/edit")]
     public IActionResult EditDish(int dishId)
     {
+        // Linq query to get the dish
         Dish? ToBeEdited = _context.Dishes.FirstOrDefault(d => d.DishId == dishId);
         if (ToBeEdited == null){
             return RedirectToAction("AllDishes");
@@ -93,6 +98,7 @@ public class DishController : Controller
         {
             return View("EditDish", ToBeUpdated);
         }
+        // Must update all attributes of the dish
         ToBeUpdated.Chef = editedDish.Chef;
         ToBeUpdated.Name = editedDish.Name;
         ToBeUpdated.Calories = editedDish.Calories;
