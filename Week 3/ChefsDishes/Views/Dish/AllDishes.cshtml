@@ -1,7 +1,7 @@
 @model List<Dish>
 @{
     ViewData["Title"] = "All Dishes";
-    var context = ViewBag.Context as MyContext;
+    @* var context = ViewBag.Context as MyContext; *@
 }
 
 <h1>Check out our tasty dishes! Yum!</h1>
@@ -20,13 +20,12 @@
         {
             <tr>
                 <td>@dish.Name</td>
-                @* COME BACK TO THIS YA IDIOT *@
-                @* <td>
+                <td>
                     @{
-                        var chef = context.Chefs.Where(c => c.ChefId == dish.ChefId).Select(c =>  $"{c.FirstName} {c.LastName}").FirstOrDefault();
-                        @chef
+                        string chef = _context.Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId)
+                        @chef.FirstName
                     }
-                </td> *@
+                </td>
                 <td>@dish.Tastiness</td>
                 <td>@dish.Calories</td>
 

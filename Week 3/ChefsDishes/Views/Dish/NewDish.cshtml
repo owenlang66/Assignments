@@ -2,6 +2,7 @@
 @model Dish
 
 <h1>Add a New Dish!</h1>
+<hr>
 <form asp-action="CreateDish" asp-controller="Dish" method="POST">
     <div class="m-3">
         <label asp-for="Name">Name of Dish: </label>
@@ -23,7 +24,13 @@
     </div>
     <div class="m-3">
         <label asp-for="Tastiness">Tastiness: </label>
-        <input asp-for="Tastiness"/>
+        <select asp-for="Tastiness" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
         <span asp-validation-for="Tastiness"></span>
     </div>
     <button type="submit">Add Dish</button>

@@ -1,4 +1,6 @@
 @model List<Chef>
+@inject MyContext _context
+@using Microsoft.EntityFrameworkCore; 
     @{
     ViewData["Title"] = "All Chefs";
 }
@@ -24,7 +26,14 @@
                     @age
                 }
                 </td>
-                <td>idk</td>
+                <td>@{
+                    int num = _context.Chefs
+                        .Include(c => c.AllDishes)
+                        .Single(c => c.ChefId == chef.ChefId)
+                        .AllDishes.Count; 
+                    @num
+                }
+                </td>
             </tr>
         }
     </tbody>
