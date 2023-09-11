@@ -1,0 +1,36 @@
+@model List<Dish>
+@{
+    ViewData["Title"] = "All Dishes";
+    var context = ViewBag.Context as MyContext;
+}
+
+<h1>Check out our tasty dishes! Yum!</h1>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Dish Name</th>
+            <th>Chef</th>
+            <th>Tastiness</th>
+            <th>Calories</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Dish dish in Model)
+        {
+            <tr>
+                <td>@dish.Name</td>
+                @* COME BACK TO THIS YA IDIOT *@
+                @* <td>
+                    @{
+                        var chef = context.Chefs.Where(c => c.ChefId == dish.ChefId).Select(c =>  $"{c.FirstName} {c.LastName}").FirstOrDefault();
+                        @chef
+                    }
+                </td> *@
+                <td>@dish.Tastiness</td>
+                <td>@dish.Calories</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
