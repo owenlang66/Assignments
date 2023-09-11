@@ -28,7 +28,7 @@
                         @* Why in the world does _context not get recognized in here, it works in other views *@
                         @* var chef = (ViewBag.Context as MyContext).Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId); *@
                         var chef = _context.Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId);
-                        @chef.FirstName
+                        @chef.FirstName 
                     }
                 </td>
                 <td>@dish.Tastiness</td>
