@@ -1,4 +1,6 @@
 @model List<Dish>
+@inject MyContext _context
+
 @{
     ViewData["Title"] = "All Dishes";
     @* var context = ViewBag.Context as MyContext; *@
@@ -22,13 +24,15 @@
                 <td>@dish.Name</td>
                 <td>
                     @{
-                        string chef = _context.Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId)
+                        @* I do not understand for the life of me why this works, why could I not just use context as I had been using it before  *@
+                        @* Why in the world does _context not get recognized in here, it works in other views *@
+                        @* var chef = (ViewBag.Context as MyContext).Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId); *@
+                        var chef = _context.Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId);
                         @chef.FirstName
                     }
                 </td>
                 <td>@dish.Tastiness</td>
                 <td>@dish.Calories</td>
-
             </tr>
         }
     </tbody>

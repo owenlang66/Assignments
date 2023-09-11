@@ -35,7 +35,9 @@ public class DishController : Controller
         if(ModelState.IsValid)
         {
             int chosenChefId = newDish.ChefId;
+            // grabs the ChefId from the dish
             newDish.Creator = _context.Chefs.FirstOrDefault(c => c.ChefId == chosenChefId);
+            // grabs the entirety of the Chef object and assigns it to the Creator, as defined in the model
             _context.Add(newDish);
             _context.SaveChanges();
             return RedirectToAction("AllDishes");
@@ -50,7 +52,9 @@ public class DishController : Controller
     public IActionResult AllDishes()
     {
         List<Dish> dishes = _context.Dishes.ToList();
-        // ViewBag.Context = _context;
+        // grabs the list of all the dishes and created a variable to send through to the alldishes page
+        ViewBag.Context = _context;
+        // this makes absolutely no sense why I had to use ViewBag to send context through to make the ChefId thing work
         return View(dishes);
     }
 }

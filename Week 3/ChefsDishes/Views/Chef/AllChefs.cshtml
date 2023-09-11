@@ -27,10 +27,7 @@
                 }
                 </td>
                 <td>@{
-                    int num = _context.Chefs
-                        .Include(c => c.AllDishes)
-                        .Single(c => c.ChefId == chef.ChefId)
-                        .AllDishes.Count; 
+                    int num = _context.Chefs.Include(c => c.AllDishes).Single(c => c.ChefId == chef.ChefId).AllDishes.Count; 
                     @num
                 }
                 </td>
