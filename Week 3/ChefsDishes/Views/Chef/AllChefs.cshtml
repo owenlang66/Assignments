@@ -1,4 +1,5 @@
 @model List<Chef>
+    @* need to inject an instance of mycontext in order to use it on this page *@
 @inject MyContext _context
 @using Microsoft.EntityFrameworkCore; 
     @{
@@ -22,7 +23,10 @@
                 <td>@chef.FirstName @chef.LastName</td>
                 <td>@{
                     int age = DateTime.Today.Year - chef.DOB.Year;
-                    if (chef.DOB > DateTime.Today.AddYears(-age)) age--;
+                    if (chef.DOB > DateTime.Today.AddYears(-age)) 
+                        {
+                            age--;
+                        }
                     @age
                 }
                 </td>

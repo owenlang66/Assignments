@@ -1,5 +1,5 @@
 @model List<Dish>
-@inject MyContext _context
+@* @inject MyContext _context *@
 
 @{
     ViewData["Title"] = "All Dishes";
@@ -23,14 +23,18 @@
             <tr>
                 <td>@dish.Name</td>
                 <td>
+                    @dish.Creator.FirstName @dish.Creator.LastName
                     @{
-                        @* I do not understand for the life of me why this works, why could I not just use context as I had been using it before  *@
-                        @* Why in the world does _context not get recognized in here, it works in other views *@
+                        @* these are two other ways I figured out to do it that are so much less efficient than the way that Eric just showed me, but I'm keeping them here just in case future reference *@
+
                         @* var chef = (ViewBag.Context as MyContext).Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId); *@
-                        var chef = _context.Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId);
-                        @chef.FirstName 
+                        @* this one uses the Viewbag that gets passed through *@
+
+                        @* var chef = _context.Chefs.FirstOrDefault(c => c.ChefId == dish.ChefId);
+                        this one uses the inject my_context *@
+                        @* @chef.FirstName *@
                     }
-                </td>
+                </td> 
                 <td>@dish.Tastiness</td>
                 <td>@dish.Calories</td>
             </tr>
