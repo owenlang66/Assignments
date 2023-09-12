@@ -31,6 +31,7 @@
                         <form asp-action="DeleteWedding" asp-controller="Wedding" asp-route-id="@w.WeddingId" method="POST">
                             <button class="btn btn-danger">DELETE</button>
                         </form>
+                        <a asp-action="EditWedding" asp-controller="Wedding" asp-route-Id="@w.WeddingId">Edit</a>
                     }
                     else
                     {

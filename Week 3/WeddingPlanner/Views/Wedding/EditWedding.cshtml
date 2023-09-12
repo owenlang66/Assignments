@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Edit Wedding";
+}
+@model Wedding
+@await Html.PartialAsync("_Nav")
+
+<h1>Edit @Model.WedderOne and @Model.WedderTwo's wedding!</h1>
+<form asp-action="UpdateWedding" asp-controller="Wedding" method="POST" asp-route-Id="@Model.WeddingId">
+    <div class="m-3">
+        <label asp-for="WedderOne">Wedder One: </label>
+        <input asp-for="WedderOne" value="@Model.WedderOne"/>
+        <span asp-validation-for="WedderOne"></span>
+    </div>
+    <div class="m-3">
+        <label asp-for="WedderTwo">Wedder Two: </label>
+        <input asp-for="WedderTwo" value="@Model.WedderTwo"/>
+        <span asp-validation-for="WedderTwo"></span>
+    </div>
+    <div class="m-3">
+        <label asp-for="Date">Date: </label>
+        <input asp-for="Date" type="date" value="@Model.Date"/>
+        <span asp-validation-for="Date"></span>
+    </div>
+    <div class="m-3">
+        <label asp-for="Address">Address: </label>
+        <input asp-for="Address" value="@Model.Address"/>
+        <span asp-validation-for="Address"></span>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
