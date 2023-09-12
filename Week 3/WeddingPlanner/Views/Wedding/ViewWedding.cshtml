@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "View Wedding";
+}
+@model Wedding
+@await Html.PartialAsync("_Nav")
+<div class="row">
+    <div class="col-6">
+        <h1>@Model.WedderOne and @Model.WedderTwo's Wedding!</h1>
+        <h2>Date: @Model.Date.ToString("MMM d yyyy")</h2>
+        <h4>Guests: </h4>
+        <ul>
+            @foreach (Guest g in Model.Users)
+            {
+                <div>
+                @g.User.FirstName 
+                <span> </span>
+                @g.User.LastName
+                </div>
+            }
+        </ul>
+    </div>
+</div>

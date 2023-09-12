@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using ProductsCategories.Models;
 
 namespace ProductsCategories.Controllers;
@@ -52,6 +54,8 @@ public class ProductController : Controller
         if (OneProduct == null){
             return RedirectToAction("AllProducts");
         }
+        List<Category> allCategories = _context.Categories.ToList();
+        ViewBag.AllCategories = new SelectList(allCategories, "CategoryId", "Name");
         return View(OneProduct);
     }
 

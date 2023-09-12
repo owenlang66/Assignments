@@ -18419,8 +18419,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 3\\ProductsCategories\\Views\\Category\\_OneCategoryPartial.cshtml",
-      "TargetPath": "Views\\Category\\_OneCategoryPartial.cshtml",
+      "FilePath": "c:\\Users\\Owen Lang\\Desktop\\C#\\Assignments\\Week 3\\ProductsCategories\\Views\\Category\\ViewCategory.cshtml",
+      "TargetPath": "Views\\Category\\ViewCategory.cshtml",
       "FileKind": "mvc"
     },
     {

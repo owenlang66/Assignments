@@ -2,5 +2,5 @@
 
 @foreach(Product product in Model)
 {
-    <p>@product.Name</p>
+    <h3><a asp-route-productId="@product.ProductId" asp-action="ViewProduct" asp-controller="Product">@product.Name</a></h3>
 }

@@ -2,5 +2,5 @@
 
 @foreach(Category category in Model)
 {
-    <p>@category.Name</p>
+    <h3><a asp-route-categoryId="@category.CategoryId" asp-action="ViewCategory" asp-controller="Category">@category.Name</a></h3>
 }
