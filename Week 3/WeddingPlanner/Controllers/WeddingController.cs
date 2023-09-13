@@ -54,7 +54,8 @@ public class WeddingController : Controller
             // now we add it to our list using context
             _context.Add(newWedding);
             _context.SaveChanges();
-            return RedirectToAction("Dashboard");
+            // redirects us to the view page
+            return ViewWedding(newWedding.WeddingId);
         }
         else
         {
@@ -118,7 +119,8 @@ public class WeddingController : Controller
         {
             return RedirectToAction("Dashboard");
         }
-        return View(oneWedding);
+        // need to pass in ViewWedding again to redirect to the view after creation
+        return View("ViewWedding", oneWedding);
 
     }
 
