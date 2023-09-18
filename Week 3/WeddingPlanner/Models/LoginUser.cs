@@ -18,3 +18,4 @@ public class LoginUser
     [Display(Name ="Password")]
     public string LogPassword { get; set; } 
 }
+

@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using ProductsCategories.Models;
 
 namespace ProductsCategories.Controllers;
@@ -45,7 +46,12 @@ public class CategoryController : Controller
     [HttpGet("category/{categoryId}")]
     public IActionResult ViewCategory(int categoryId)
     {
-        Category? OneCategory = _context.Categories.FirstOrDefault(d => d.CategoryId == categoryId);
+        ViewBag.AllProducts = _context.Products.ToList();
+        Category? OneCategory = _context.Categories
+            .Include(association => association.Products)
+            .ThenInclude(categoryId => categoryId.Product)
+            .FirstOrDefault(d => d.CategoryId == categoryId);
+
         if (OneCategory == null){
             return RedirectToAction("ViewCategory");
         }
